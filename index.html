@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Logic-Based Data Organization Paradigm for How-To Question Answering with Retrieval Augmented Generation.">
+  <meta name="keywords" content="Retrieval Augmented Generation, How-to Questions, Logic based">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thread: A Logic-Based Data Organization Paradigm for How-To Question Answering with Retrieval Augmented Generation</title>
+  <link rel="icon" type="image/x-icon" href="./static/images/thread.png">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <br>
+          <img src="./static/images/thread.png" alt="Home"
+          style="height:60px; width:60px; vertical-align:middle; margin-right:5px;">
+          Thread: A Logic-Based Data Organization Paradigm for How-To Question Answering with Retrieval Augmented Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/kkk-an">Kaikai An</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/fangkaiyang/">Fangkai Yang </a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a>Liqun Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Junting Lu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sitaocheng.github.io/">Sitao Cheng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a>Lu Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Pu Zhao</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a>Lele Cao</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a>Qingwei Lin</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a>Saravan Rajmohan</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a>Dongmei Zhang</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a>Qi Zhang</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Peking University,</span>
+            <span class="author-block"><sup>2</sup>Microsoft,</span>
+            <span class="author-block"><sup>3</sup>Nanjing University</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2406.13372"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.13372"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kkk-an/thread.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Current question answering systems leveraging retrieval augmented generation perform well in answering factoid questions but face challenges with non-factoid questions, particularly how-to queries requiring detailed step-by-step instructions and explanations. In this paper, we introduce Thread, a novel data organization paradigm that transforms documents into logic units based on their inter-connectivity. Extensive experiments across open-domain and industrial scenarios demonstrate that Thread outperforms existing data organization paradigms in RAG-based QA systems, significantly improving the handling of how-to questions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Methodolody. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Methodolody</h2>
+        
+        <div class="content has-text-justified">
+          <div>
+            <div class="content has-text-justified">
+              <p>
+              <span style="font-size: 1.3em;"><b>Thread: LU-based Knowledge Base.</b></span> Thread is a knowledge base composed of discrete but interconnected retrieval units called Logic Units (LUs). Each consists of 'Prerequisite', 'Header', 'Body', 'Linker' and 'Meta Data' with types of 'Step', 'Terminology', 'FAQ' and 'Appendix'. In practice, documentation is often unstructured and varies in format and style. Our approach to converting documentation into Thread involves a two-stage process to obtain LUs. We believe that with advancements in LLMs, this process could be streamlined into a single stage, enabling high-fidelity LU conversion with minimal hallucination.
+              </p>
+            </div>
+            <img id="qasystem" src="./static/images/threadconstruct.png" style="height: 60%; max-width: 60%; display: block; margin: auto;">
+          </div>
+        </div>
+        <!--/ Thread: LU-based Knowledge Base. -->
+
+        <!-- Integrate Thread with QA System. -->
+        <div class="content has-text-justified">
+          <div>
+            <div class="content has-text-justified">
+              <p>
+                <span style="font-size: 1.3em;"><b>Integrate Thread with QA System.</b></span> The QA system integrated with <i><b>Thread</b></i>. It retrieves relevant <b>Logic Units</b> (LUs) based on query-Header similarity and filters out LUs that do not meet the current prerequisites. The selected LUs are passed to LLMs to generate actions for execution. After execution, the Linker matches results and generates a new query for the next retrieval iteration.
+              </p>
+            </div>
+            <img id="qasystem" src="./static/images/LU.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
+          </div>
+        </div>
+        <!--/ Integrate Thread with QA System. -->
+      </div>
+    </div>
+    <!--/ Methodology. -->
+  </div>
+</section>
+
+<section>
+  <div class="container is-max-desktop">
+    <!-- Experiments. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>We evaluate Thread on two open-domain scenarios: Web Navigation (<a href="https://arxiv.org/abs/2306.06070">Mind2web</a>) and Wikipedia Instructions (<a href="https://www.wikihow.com/">WikiHow</a>), and one industrial scenario: Incident Mitigation (<a href="https://arxiv.org/abs/2205.13457">IcM</a>). More details about datasets can be found in our paper.</p> 
+        </div>
+
+        <div class="content has-text-justified">
+          <h2 class="title is-size-5 has-text-centered">Main Results</h2>
+          <div>
+            <div class="content has-text-justified">
+              <p><b>Mind2web</b>: For Mind2web, we compare our method with baselines and both doc-based and chunk-based RAG methods. We observe that providing informative documents (regardless of the data organization paradigm) within RAG methods significantly improves performance. RAG methods outperform ICL and SL methods. By incorporating external documents, the doc-based RAG method achieves performance comparable to the best results of MINDACT. Notably, our Thread paradigm is the best among RAG methods, showing improvements of 4.06% in Ele. Acc, 3.49% in Step SR and 3.57% in SR.</p>
+            </div>
+            <img id="mind2web" src="./static/images/mind2web.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <div class="content has-text-justified">
+                <p><b>WikiHow</b>: In the single-turn setting, where the QA system generates the entire plan in one interaction, our Thread-based method outperforms the doc-based method which provides the entire relevant document, indicating that Thread offers information with less redundancy. In the multi-turn setting, the QA system performs iterative retrieval, which shows superior performance compared to single-turn. This indicates the advantage of a step-by-step approach in handling how-to questions. Notably, the SR improves significantly from 58.76% to 68.04% in doc-based paradigm and from 63.91% to 72.16% in Thread paradigm.</p>
+              </div>
+              <img id="wikihow" src="./static/images/wikihow.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+            </div>
+          </div>
+    
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <div class="content has-text-justified">
+                  <p><b>Incident Mitigation</b>: Both chunk-based and doc-based RAG methods exhibit comparable ineffectiveness in incident mitigation. In contrast,  our Thread paradigm achieves the best score across all metrics, particularly achieving a significant increase in SR from 21.02% to 33.33%. Furthermore, P.F. Step SR indicates our method's capability to handle significantly more steps before encountering a failure, thus reducing the need for human intervention. Consequently, our method achieves the highest Step SR and requires the fewest interaction Turns to mitigate both simple and complex incidents.</p>
+                </div>
+                <img id="icm" src="./static/images/icm.png" >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <div>
+            <h2 class="title is-size-5 has-text-centered">Analysis</h2>
+            <div class="content has-text-justified">
+              <p><b>Data Organization Paradigms</b>: We compare various data organization paradigms within RAG, implementing Semantic Chunking and Proposition in addition to recursive chunking (chunk-based) and entire document (doc-based) approaches. Our Thread paradigm outperforms the other paradigms across all metrics. Although Semantic and Proposition methods use LLMs to merge semantically similar sentences, they fail to adequately address logical connections, resulting in poor performance. Additionally, our system processes the smallest token length of retrieval units yet achieves the highest performance, underscoring our approach's efficiency and effectiveness.</p>
+            </div>
+            <img id="wikihow" src="./static/images/analysis_paradigm.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <div>
+            <div class="content has-text-justified">
+              <p><b>Document Formats in LU Extraction</b>: We tested our LU extraction method in accommodating varying document structures. We generated different document formats, including structured markdown, hierarchical guidelines, tabular checklists, and narrative documents. This table shows that our Thread paradigm effectively organizes these formats, consistently outperforming the chunk-based paradigm across all metrics. Our Thread improves Ele. Acc by up to 9.61%, Op. F1 by up to 8.43%, and Step SR by up to 8.51%. Notably, our Thread achieves the highest performance with structured documents, as this format helps construct a higher-quality knowledge base.</p>
+            </div>
+            <img id="wikihow" src="./static/images/analysis_format.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Experiments. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Application</h2>
+        <p>
+          <a href="https://arxiv.org/abs/2402.17531">Nissist: An Incident Mitigation Copilot based on Troubleshooting Guides</a>
+        </p>
+        <!-- <p>
+          Nissist utilize 
+        </p> -->
+      </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{an2024thread,
+    title={Thread: A Logic-Based Data Organization Paradigm for How-To Question Answering with Retrieval Augmented Generation},
+    author={An, Kaikai and Yang, Fangkai and Li, Liqun and Lu, Junting and Cheng, Sitao and Wang, Lu and Zhao, Pu and Cao, Lele and Lin, Qingwei and Rajmohan, Saravan and others},
+    journal={arXiv preprint arXiv:2406.13372},
+    year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page is for research demonstration purposes only.
+          </p>
+          <p>
+            The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
