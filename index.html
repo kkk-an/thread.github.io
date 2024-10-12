@@ -69,32 +69,39 @@
               <a href="https://sitaocheng.github.io/">Sitao Cheng</a><sup>3</sup>,
             </span>
             <span class="author-block">
+              <a>Shuzheng Si</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
               <a>Lu Wang</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Pu Zhao</a><sup>2</sup>
+              <a>Pu Zhao</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Lele Cao</a><sup>2</sup>
+              <a>Lele Cao</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Qingwei Lin</a><sup>2</sup>
+              <a>Qingwei Lin</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Saravan Rajmohan</a><sup>2</sup>
+              <a>Saravan Rajmohan</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Dongmei Zhang</a><sup>2</sup>
+              <a>Dongmei Zhang</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Qi Zhang</a><sup>2</sup>
+              <a>Qi Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Baobao Chang</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Peking University,</span>
             <span class="author-block"><sup>2</sup>Microsoft,</span>
-            <span class="author-block"><sup>3</sup>Nanjing University</span>
+            <span class="author-block"><sup>3</sup>Nanjing University,</span>
+            <span class="author-block"><sup>4</sup>Tsinghua University</span>
           </div>
           <div class="is-size-6 publication-authors">
           </div>
@@ -111,6 +118,7 @@
                   <span>Paper</span>
                 </a>
               </span>
+              <!-- Arxiv Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2406.13372"
                    class="external-link button is-normal is-rounded is-dark">
@@ -118,6 +126,19 @@
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Hf Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.13372"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <!-- <span class="icon">
+                      <i class="ai ai-huggingface"></i>
+                  </span> -->
+                  <span class="icon">
+                    <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face Logo" width="30" height="30">
+                  </span>
+                  <span>Huggingface</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -148,12 +169,33 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Current question answering systems leveraging retrieval augmented generation perform well in answering factoid questions but face challenges with non-factoid questions, particularly how-to queries requiring detailed step-by-step instructions and explanations. In this paper, we introduce Thread, a novel data organization paradigm that transforms documents into logic units based on their inter-connectivity. Extensive experiments across open-domain and industrial scenarios demonstrate that Thread outperforms existing data organization paradigms in RAG-based QA systems, significantly improving the handling of how-to questions.
+            Recent advances in retrieval-augmented generation have significantly improved the performance of question-answering systems, particularly on factoid '5Ws' questions. However, these systems still face substantial challenges when addressing '1H' questions, specifically how-to questions, which are integral to decision-making processes and require dynamic, step-by-step answers. The key limitation lies in the prevalent data organization paradigm, chunk, which divides documents into fixed-size segments, and disrupts the logical coherence and connections within the context. To overcome this, in this paper, we propose Thread, a novel data organization paradigm aimed at enabling current systems to handle how-to questions more effectively. Specifically, we introduce a new knowledge granularity, termed 'logic unit', where documents are transformed into more structured and loosely interconnected logic units with large language models. Extensive experiments conducted across both open-domain and industrial settings demonstrate that Thread outperforms existing paradigms significantly, improving the success rate of handling how-to questions by 21% to 33%. Moreover, Thread exhibits high adaptability in processing various document formats, drastically reducing the candidate quantity in the knowledge base and minimizing the required information to one-fourth compared with chunk, optimizing both efficiency and effectiveness.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- How-to questions. -->
+    <div class="columns is-centered">
+      <!-- <div class="column is-full-width"> -->
+      <div class="column is-five-sixths">
+        <h2 class="title is-3 has-text-centered">How-to Questions</h2>
+        <div class="content has-text-justified">
+          <p>
+            How-to questions are inherently more complex, often involve processes that require interpretation and analysis. For example, correctly answering below question involves a multi-step decision-making process. Such a dynamic nature necessitates the RAG systems incrementally guide users through each step, adapting to specific circumstances and providing precise and logical information.
+          </p>
+        <div class="content has-text-justified">
+        </div>
+        <img id="qasystem" src="./static/images/qa.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
+      </div>
+    </div>
+    <!--/ How-to questions. -->
   </div>
 </section>
 
@@ -169,10 +211,10 @@
           <div>
             <div class="content has-text-justified">
               <p>
-              <span style="font-size: 1.3em;"><b>Thread: LU-based Knowledge Base.</b></span> Thread is a knowledge base composed of discrete but interconnected retrieval units called Logic Units (LUs). Each consists of 'Prerequisite', 'Header', 'Body', 'Linker' and 'Meta Data' with types of 'Step', 'Terminology', 'FAQ' and 'Appendix'. In practice, documentation is often unstructured and varies in format and style. Our approach to converting documentation into Thread involves a two-stage process to obtain LUs. We believe that with advancements in LLMs, this process could be streamlined into a single stage, enabling high-fidelity LU conversion with minimal hallucination.
+              <span style="font-size: 1.3em;"><b>Thread: LU-based Knowledge Base.</b></span> Thread is a knowledge base composed of discrete but interconnected retrieval units called Logic Units (LUs). Different from the chunk-based paradigm, LU comprises specially designed components, especially for bridging consecutive steps when addressing how-to questions, considering the internal logic and coherence of documents. Specifically, each consists of 'Prerequisite', 'Header', 'Body', 'Linker' and 'Meta Data' with types of 'Step', 'Terminology', 'FAQ' and 'Appendix'. In practice, documentation is often unstructured and varies in format and style. Our approach to converting documentation into Thread involves a two-stage process to obtain LUs.
               </p>
             </div>
-            <img id="qasystem" src="./static/images/threadconstruct.png" style="height: 60%; max-width: 60%; display: block; margin: auto;">
+            <img id="qasystem" src="./static/images/threadconstruct.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
           </div>
         </div>
         <!--/ Thread: LU-based Knowledge Base. -->
@@ -182,7 +224,7 @@
           <div>
             <div class="content has-text-justified">
               <p>
-                <span style="font-size: 1.3em;"><b>Integrate Thread with QA System.</b></span> The QA system integrated with <i><b>Thread</b></i>. It retrieves relevant <b>Logic Units</b> (LUs) based on query-Header similarity and filters out LUs that do not meet the current prerequisites. The selected LUs are passed to LLMs to generate actions for execution. After execution, the Linker matches results and generates a new query for the next retrieval iteration.
+                <span style="font-size: 1.3em;"><b>Integrate Thread with QA System.</b></span> When answering how-to questions, the system integrated with <i><b>Thread</b></i> enables a dynamic interaction manner. First, it retrieves relevant LUs based on their indexed headers. Then, the body of the selected LU provides the necessary content to generate responses for the current step. With user feedback, the linker in LU dynamically connects to other LUs, allowing the system to adapt its responses until the how-to question is comprehensively addressed.
               </p>
             </div>
             <img id="qasystem" src="./static/images/LU.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
@@ -243,7 +285,7 @@
             <div class="content has-text-justified">
               <p><b>Data Organization Paradigms</b>: We compare various data organization paradigms within RAG, implementing Semantic Chunking and Proposition in addition to recursive chunking (chunk-based) and entire document (doc-based) approaches. Our Thread paradigm outperforms the other paradigms across all metrics. Although Semantic and Proposition methods use LLMs to merge semantically similar sentences, they fail to adequately address logical connections, resulting in poor performance. Additionally, our system processes the smallest token length of retrieval units yet achieves the highest performance, underscoring our approach's efficiency and effectiveness.</p>
             </div>
-            <img id="wikihow" src="./static/images/analysis_paradigm.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+            <img id="wikihow" src="./static/images/analysis.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
           </div>
         </div>
 
@@ -252,7 +294,15 @@
             <div class="content has-text-justified">
               <p><b>Document Formats in LU Extraction</b>: We tested our LU extraction method in accommodating varying document structures. We generated different document formats, including structured markdown, hierarchical guidelines, tabular checklists, and narrative documents. This table shows that our Thread paradigm effectively organizes these formats, consistently outperforming the chunk-based paradigm across all metrics. Our Thread improves Ele. Acc by up to 9.61%, Op. F1 by up to 8.43%, and Step SR by up to 8.51%. Notably, our Thread achieves the highest performance with structured documents, as this format helps construct a higher-quality knowledge base.</p>
             </div>
-            <img id="wikihow" src="./static/images/analysis_format.png" style="height: 70%; max-width: 70%; display: block; margin: auto;">
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <div>
+            <img id="wikihow" src="./static/images/llm.png" style="height: 90%; max-width: 90%; display: block; margin: auto;">
+            <div class="content has-text-justified">
+              <p><b>Different LLMs as Backbone</b>: We further conduct experiments on LLaMA3-70B, as shown in Figure 4. Although LLaMA3-70B isless powerful than GPT-4, it still demonstrates competitive performance with the help of THREAD. Results indicate that LLaMA3 struggles with WikiHow questions applying chunk-based or doc-based paradigms. However, with the integration of THREAD, LLaMA3 not only achieves much better performance in SR, but also narrows the gap with GPT-4. Specifically, LLaMA3 achieves SR and F1 scores of 60.82% and 72.84%, respectively, compared to GPT-4’s scores of 72.16% and 80.74%. This indicates that while a performance gap remains, particularly with the chunk-based and doc-based paradigms, our THREAD considerably reduces this disparity between GPT-4 and LLaMA3. These findings highlight the value of our proposed paradigm in enhancing the performance of different LLMs, showcasing its generalizability, robustness, and efficiency in handling how-to questions.</p>
+            </div>
           </div>
         </div>
       </div>
